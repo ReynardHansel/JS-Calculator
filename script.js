@@ -38,7 +38,7 @@ class Calculator {
         let computation
         const prev = parseFloat(this.previousOperand)
         const current = parseFloat(this.currentOperand)
-        if (isNaN(prev) || isNan(current)) {
+        if (isNaN(prev) || isNaN(current)) {
             return
         }
         switch (this.operation) {
@@ -51,7 +51,7 @@ class Calculator {
             case '*':
                 computation = prev * current
                 break;
-            case '&#247':
+            case '÷':
                 computation = prev / current
                 break;
             default:
@@ -70,6 +70,8 @@ class Calculator {
         this.currentOperandTextElement.innerText = this.getDisplayNumber(this.currentOperand)
         if (this.operation != null) {
             this.previousOperandTextElement.innerText = `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+        } else {
+            this.previousOperandTextElement.innerText = ''
         }
     }
 }
